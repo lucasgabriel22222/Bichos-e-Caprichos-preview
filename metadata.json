@@ -1,0 +1,6 @@
+{
+  "name": "Lisboa Bichos e Caprichos - Pet Shop & Tosquia",
+  "description": "Banho, tosquia, alimentação de qualidade e cuidados especiais para o seu patudo em Lisboa. Parada Alto de São João, 1900-051 Lisboa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
