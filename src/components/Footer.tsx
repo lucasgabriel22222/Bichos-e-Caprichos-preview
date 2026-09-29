@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scissors, MapPin, Phone, Clock, MessageCircle, Instagram } from 'lucide-react';
+import { Home, MapPin, Phone, Clock, MessageCircle, Instagram } from 'lucide-react';
 import { siteData } from '@/src/data/siteData';
 
 export const Footer: React.FC = () => {
@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2.5 text-white">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                <Scissors className="w-4 h-4" />
+                <Home className="w-4 h-4" />
               </div>
               <span className="font-heading font-bold text-base tracking-tight text-white uppercase">
                 {siteData.company.name}
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              Banho, tosquia, alimentação de qualidade e cuidados especiais para o seu patudo em Lisboa.
+              Hospedagem canina familiar, creche daycare com recreação, banho e tosquia profissional e transporte táxi pet em Lisboa.
             </p>
 
             <div className="pt-2">
@@ -40,32 +40,32 @@ export const Footer: React.FC = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-heading font-semibold text-white text-sm mb-4">
-              Navegação Rápida
+              Nossos 4 Serviços
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <a href="#inicio" className="hover:text-emerald-400 transition-colors">
-                  Início
+                <a href="#servicos" className="hover:text-emerald-400 transition-colors">
+                  Hospedagem (Hotel Pet)
                 </a>
               </li>
               <li>
                 <a href="#servicos" className="hover:text-emerald-400 transition-colors">
-                  Serviços de Estética Pet
+                  Creche (Daycare Canino)
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-emerald-400 transition-colors">
+                  Banho e Tosquia
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-emerald-400 transition-colors">
+                  Transporte Táxi Pet
                 </a>
               </li>
               <li>
                 <a href="#diferenciais" className="hover:text-emerald-400 transition-colors">
-                  Diferenciais &amp; Cuidados
-                </a>
-              </li>
-              <li>
-                <a href="#avaliacoes" className="hover:text-emerald-400 transition-colors">
-                  Avaliações dos Tutores (Google)
-                </a>
-              </li>
-              <li>
-                <a href="#localizacao" className="hover:text-emerald-400 transition-colors">
-                  Localização &amp; Horário
+                  Diferenciais &amp; Supervisão
                 </a>
               </li>
               <li>
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
               Lisboa Bichos e Caprichos
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Espaço de estética animal dedicado ao bem-estar, beleza e saúde do seu cão ou gato no Alto de São João.
+              Espaço de hospedagem e bem-estar animal dedicado ao cuidado atencioso, segurança e recreação saudável do seu cão no Alto de São João.
             </p>
             <div className="flex items-center gap-3">
               <a

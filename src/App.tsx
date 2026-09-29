@@ -20,7 +20,7 @@ import { BookingModal } from '@/src/components/BookingModal';
 export default function App() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [selectedServiceForModal, setSelectedServiceForModal] = useState<string>(
-    'Banho & Tosquia Especializada'
+    'Hospedagem (Hotel Pet / Pernoite)'
   );
 
   const handleOpenBooking = (serviceName?: string) => {

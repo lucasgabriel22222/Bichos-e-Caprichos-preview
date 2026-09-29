@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Scissors, MessageCircle, Menu, X, Phone } from 'lucide-react';
+import { Home, MessageCircle, Menu, X, Phone } from 'lucide-react';
 import { siteData } from '@/src/data/siteData';
 
 export const Navbar: React.FC = () => {
@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: 'Início', href: '#inicio' },
-    { label: 'Serviços', href: '#servicos' },
+    { label: '4 Serviços', href: '#servicos' },
     { label: 'Diferenciais', href: '#diferenciais' },
     { label: 'Avaliações', href: '#avaliacoes' },
     { label: 'Localização', href: '#localizacao' },
@@ -57,14 +57,14 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Zone: Clean Wordmark with subtle Lucide icon */}
+            {/* Brand Zone: Clean Wordmark with subtle Lucide Home icon */}
             <a
               href="#inicio"
               className="flex items-center gap-2.5 text-white group outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md"
               aria-label="Lisboa Bichos e Caprichos - Início"
             >
               <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 group-hover:border-emerald-400 transition-colors">
-                <Scissors className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+                <Home className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
               </div>
               <span className="font-heading font-bold text-lg sm:text-xl tracking-tight text-slate-100 group-hover:text-emerald-400 transition-colors uppercase whitespace-nowrap">
                 {siteData.company.name}
@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-lg shadow-md shadow-emerald-950/40 hover:shadow-emerald-600/25 transition-all whitespace-nowrap"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Marcar no WhatsApp</span>
+                <span>Reservar no WhatsApp</span>
               </a>
             </div>
 
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 text-center font-semibold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg shadow-md transition-colors"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Marcar no WhatsApp</span>
+                <span>Reservar Vaga no WhatsApp</span>
               </a>
             </div>
           </div>

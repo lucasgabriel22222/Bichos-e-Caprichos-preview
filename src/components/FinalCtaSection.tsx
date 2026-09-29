@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Scissors, Phone } from 'lucide-react';
+import { MessageCircle, Home, Phone } from 'lucide-react';
 import { siteData } from '@/src/data/siteData';
 
 interface FinalCtaSectionProps {
@@ -14,15 +14,15 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenBookingM
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mb-6">
-          <Scissors className="w-7 h-7" />
+          <Home className="w-7 h-7" />
         </div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight mb-5 max-w-3xl mx-auto leading-tight">
-          O seu patudo precisa de um banho ou tosquia?
+          Vai viajar ou precisa de creche e cuidados para o seu cão?
         </h2>
 
         <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Fale connosco pelo WhatsApp e agende o horário ideal para o seu animal de estimação no Lisboa Bichos e Caprichos. Garantimos carinho, higiene e pontualidade.
+          Fale connosco pelo WhatsApp e garanta a vaga do seu patudo na hospedagem, creche daycare, banho ou serviço de táxi pet no Lisboa Bichos e Caprichos. Vagas limitadas para atendimento personalizado.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
@@ -33,7 +33,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenBookingM
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-base font-semibold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-xl shadow-xl shadow-emerald-950/80 hover:shadow-emerald-600/40 transition-all transform hover:-translate-y-0.5 cursor-pointer"
           >
             <MessageCircle className="w-5 h-5" />
-            <span>Marcar pelo WhatsApp Agora</span>
+            <span>Reservar Vaga no WhatsApp Agora</span>
           </a>
 
           <button
@@ -41,7 +41,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenBookingM
             onClick={onOpenBookingModal}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-medium text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 rounded-xl transition-all cursor-pointer"
           >
-            <span>Simular Agendamento</span>
+            <span>Simular Estadia &amp; Vaga</span>
           </button>
         </div>
 

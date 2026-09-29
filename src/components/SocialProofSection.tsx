@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, CheckCircle, Quote, ExternalLink } from 'lucide-react';
+import { Star, CheckCircle, ExternalLink } from 'lucide-react';
 import { siteData } from '@/src/data/siteData';
 
 export const SocialProofSection: React.FC = () => {
@@ -10,7 +10,7 @@ export const SocialProofSection: React.FC = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <Star className="w-3.5 h-3.5 fill-amber-400" />
-            <span>Avaliações Verificadas</span>
+            <span>Avaliações Reais dos Tutores</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight mb-4">
@@ -28,7 +28,7 @@ export const SocialProofSection: React.FC = () => {
           </div>
 
           <p className="text-base text-slate-300">
-            Total transparência e satisfação comprovada por tutores de cães e gatos em Lisboa.
+            Total tranquilidade para quem viaja ou trabalha: veja o relato de quem confia o seu patudo ao Lisboa Bichos e Caprichos.
           </p>
         </div>
 

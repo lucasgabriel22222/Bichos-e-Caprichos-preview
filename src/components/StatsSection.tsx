@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Star, Heart, Scissors, MessageCircle } from 'lucide-react';
-import { siteData } from '@/src/data/siteData';
+import { Star, Heart, Home, ShieldCheck } from 'lucide-react';
 
 export const StatsSection: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -25,26 +24,26 @@ export const StatsSection: React.FC = () => {
       bgColor: 'bg-amber-500/10 border-amber-500/20',
     },
     {
-      metric: '100% Satisfação',
-      label: 'Clientes e Patudos Felizes',
-      description: 'Cuidado afetuoso, calmo e sem stresse',
+      metric: 'Supervisão',
+      label: 'Cuidado Contínuo & Carinho',
+      description: 'Acompanhamento diário sem estresse ou gaiolas',
       icon: Heart,
       iconColor: 'text-rose-400',
       bgColor: 'bg-rose-500/10 border-rose-500/20',
     },
     {
-      metric: 'Banho & Tosquia',
-      label: 'Especialistas em Estética',
-      description: 'Tesoura, máquina, higiene e hidratação',
-      icon: Scissors,
+      metric: '4 em 1',
+      label: 'Solução Completa Pet',
+      description: 'Hospedagem, Creche, Banho e Táxi Pet',
+      icon: Home,
       iconColor: 'text-emerald-400',
       bgColor: 'bg-emerald-500/10 border-emerald-500/20',
     },
     {
-      metric: 'Marcação Rápida',
-      label: 'Agendamento Direto',
-      description: 'Confirmação ágil através do WhatsApp',
-      icon: MessageCircle,
+      metric: 'No WhatsApp',
+      label: 'Fotos & Vídeos Diários',
+      description: 'Atualizações para sua tranquilidade',
+      icon: ShieldCheck,
       iconColor: 'text-teal-400',
       bgColor: 'bg-teal-500/10 border-teal-500/20',
     },

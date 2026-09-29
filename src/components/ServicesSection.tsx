@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { MessageCircle, Check, Sparkles, Calendar, ChevronRight } from 'lucide-react';
+import { MessageCircle, Check, Sparkles, Calendar, ChevronRight, Home, Sun, Scissors, Car } from 'lucide-react';
 import { siteData, ServiceItem } from '@/src/data/siteData';
 
 interface ServicesSectionProps {
   onOpenBookingModal: (serviceName?: string) => void;
 }
 
-type CategoryFilter = 'todos' | 'banho_tosquia' | 'alimentacao' | 'acessorios' | 'higiene';
+type CategoryFilter = 'todos' | 'hospedagem' | 'creche' | 'banho_tosquia' | 'transporte';
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingModal }) => {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('todos');
 
   const filterTabs = [
-    { id: 'todos', label: 'Todos os Cuidados' },
-    { id: 'banho_tosquia', label: 'Banho & Tosquia' },
-    { id: 'higiene', label: 'Higiene & Bem-Estar' },
-    { id: 'alimentacao', label: 'Alimentação' },
-    { id: 'acessorios', label: 'Acessórios' },
+    { id: 'todos', label: 'Todos os 4 Serviços', icon: Sparkles },
+    { id: 'hospedagem', label: 'Hospedagem (Hotel)', icon: Home },
+    { id: 'creche', label: 'Creche (Daycare)', icon: Sun },
+    { id: 'banho_tosquia', label: 'Banho & Tosquia', icon: Scissors },
+    { id: 'transporte', label: 'Transporte (Táxi Pet)', icon: Car },
   ];
 
   const filteredServices = siteData.services.filter((service) => {
@@ -31,13 +31,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Excelência em Cuidados Pet</span>
+            <span>Estrutura Completa de Cuidados Caninos</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight mb-4">
-            Serviços &amp; Produtos em Destaque
+            Nossos 4 Serviços Principais
           </h2>
           <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-            Higienização, tosquias personalizadas, cosmética especializada e nutrição de primeira linha para cães e gatos em Lisboa.
+            Hospedagem segura, creche com recreação diurna, estética e banho profissional e serviço de transporte porta-a-porta na Parada Alto de São João em Lisboa.
           </p>
         </div>
 
@@ -46,26 +46,28 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
           <div className="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-slate-900/90 rounded-2xl border border-slate-800 backdrop-blur-md">
             {filterTabs.map((tab) => {
               const isActive = activeCategory === tab.id;
+              const TabIcon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategory(tab.id as CategoryFilter)}
-                  className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap cursor-pointer ${
+                  className={`flex items-center gap-1.5 px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/60'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
                   }`}
                 >
-                  {tab.label}
+                  <TabIcon className="w-3.5 h-3.5" />
+                  <span>{tab.label}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Grid of Service / Product Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-14">
+        {/* Grid of 4 Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-14">
           {filteredServices.map((service) => {
             const whatsappLink = `https://wa.me/351939487333?text=${encodeURIComponent(
               service.whatsappMessage
@@ -78,7 +80,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
               >
                 <div>
                   {/* Card Image Header with Zoom Effect */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
+                  <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-slate-800">
                     <img
                       src={service.image}
                       alt={service.name}
@@ -86,7 +88,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
                       loading="lazy"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent" />
 
                     {/* Badge */}
                     <div className="absolute top-3 left-3">
@@ -95,31 +97,31 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
                       </span>
                     </div>
 
-                    <div className="absolute bottom-3 left-3 right-3 text-xs text-slate-300 flex items-center justify-between">
-                      <span className="font-medium text-slate-200">
+                    <div className="absolute bottom-3 left-4 right-4 text-xs text-slate-300 flex items-center justify-between">
+                      <span className="font-semibold text-slate-200">
                         {service.categoryLabel}
                       </span>
                       <span className="text-emerald-400 font-semibold flex items-center gap-1">
                         <Check className="w-3.5 h-3.5" />
-                        Disponível
+                        Vagas &amp; Reservas Disponíveis
                       </span>
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6">
-                    <h3 className="text-lg sm:text-xl font-heading font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                  <div className="p-6 sm:p-7">
+                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-2.5 group-hover:text-emerald-300 transition-colors">
                       {service.name}
                     </h3>
-                    <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                    <p className="text-sm text-slate-300 leading-relaxed mb-5">
                       {service.description}
                     </p>
 
                     {/* Service Highlights / Bullet Points */}
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-2.5 mb-6">
                       {service.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                          <Check className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
+                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                          <Check className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -128,28 +130,25 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
                 </div>
 
                 {/* Card Action Buttons */}
-                <div className="px-6 pb-6 pt-0 flex flex-col sm:flex-row gap-2">
+                <div className="px-6 pb-6 pt-0 flex flex-col sm:flex-row gap-2.5">
                   <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-xl transition-all shadow-sm"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-xl transition-all shadow-md shadow-emerald-950/40"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Saber Mais no WhatsApp</span>
                   </a>
 
-                  {service.category === 'banho_tosquia' && (
-                    <button
-                      type="button"
-                      onClick={() => onOpenBookingModal(service.name)}
-                      className="px-3 py-2.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 rounded-xl border border-slate-700 transition-colors flex items-center justify-center gap-1.5"
-                      title="Agendar este serviço"
-                    >
-                      <Calendar className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Agendar</span>
-                    </button>
-                  )}
+                  <button
+                    type="button"
+                    onClick={() => onOpenBookingModal(service.name)}
+                    className="px-4 py-3 text-sm font-semibold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/90 rounded-xl border border-slate-700 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    <Calendar className="w-4 h-4 text-amber-400" />
+                    <span>Reservar Vaga</span>
+                  </button>
                 </div>
               </div>
             );
@@ -160,20 +159,20 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBookingM
         <div className="bg-gradient-to-r from-emerald-950/60 via-slate-900 to-slate-900 border border-emerald-500/20 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <h4 className="text-lg sm:text-xl font-heading font-bold text-white mb-1">
-              Quer marcar com dia e horário exato para o seu patudo?
+              Precisa de Hospedagem, Creche ou Táxi Pet para o seu cão?
             </h4>
             <p className="text-sm text-slate-300">
-              Utilize o nosso assistente de marcação direta e receba a confirmação no WhatsApp em poucos minutos.
+              Personalize o período de estadia, porte e preferências para receber a confirmação de vaga pelo WhatsApp.
             </p>
           </div>
 
           <button
             type="button"
             onClick={() => onOpenBookingModal()}
-            className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-slate-900 bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-500 rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-slate-900 bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-500 rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
           >
             <Calendar className="w-4 h-4 text-slate-900" />
-            <span>Abrir Simulador de Agendamento</span>
+            <span>Simulador de Estadia &amp; Vagas</span>
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>

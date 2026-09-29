@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, ChevronDown, Sparkles, MapPin, Star } from 'lucide-react';
+import { MessageCircle, Sparkles, MapPin, Star, ShieldCheck, Home } from 'lucide-react';
 import { siteData } from '@/src/data/siteData';
 
 interface HeroProps {
@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal }) => {
       >
         <img
           src={siteData.images.hero}
-          alt="Patudo bem cuidado e feliz no Lisboa Bichos e Caprichos"
+          alt="Cão feliz hospedado e bem cuidado no Lisboa Bichos e Caprichos"
           className="w-full h-full object-cover object-center filter brightness-90"
           loading="eager"
           referrerPolicy="no-referrer"
@@ -51,23 +51,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal }) => {
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left py-12 md:py-24">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-medium mb-6 backdrop-blur-sm">
-          <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
-          <span className="whitespace-nowrap">Pet Shop, Banho &amp; Tosquia em Lisboa</span>
+          <Home className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span className="whitespace-nowrap">Hotel Pet, Creche Daycare &amp; Cuidados em Lisboa</span>
           <span className="hidden sm:inline text-slate-500">|</span>
           <span className="hidden sm:inline text-slate-300">Alto de São João</span>
         </div>
 
         {/* H1 Heading */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] mb-6 max-w-4xl">
-          Cuidados Especiais, Banho, Tosquia e Alimentação de Qualidade{' '}
+          Hospedagem Canina, Creche Daycare, Banho e Transporte{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">
-            Para o Seu Patudo
+            Para o Seu Patudo em Lisboa
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-8 max-w-2xl font-normal leading-relaxed">
-          Estética animal cuidadosa e sem stresse, produtos dermatológicos de excelência e nutrição selecionada na Parada Alto de São João. O seu cão ou gato tratado com o respeito, paciência e carinho que merece.
+          O hotel canino onde o seu cão dorme confortável, gasta energia na creche diurna, recebe banho e tosquia profissional e conta com serviço de táxi pet porta-a-porta na Parada Alto de São João.
         </p>
 
         {/* CTAs */}
@@ -79,23 +79,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal }) => {
             className="inline-flex items-center justify-center gap-2.5 px-6 py-4 text-base font-semibold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-xl shadow-lg shadow-emerald-950/60 hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
           >
             <MessageCircle className="w-5 h-5 text-emerald-100" />
-            <span>Marcar Banho / Tosquia no WhatsApp</span>
+            <span>Reservar Vaga no WhatsApp</span>
           </a>
 
           <button
             type="button"
             onClick={onOpenBookingModal}
-            className="inline-flex items-center justify-center gap-2 px-5 py-4 text-base font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-emerald-500/40 rounded-xl backdrop-blur-md transition-all whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2 px-5 py-4 text-base font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-emerald-500/40 rounded-xl backdrop-blur-md transition-all whitespace-nowrap cursor-pointer"
           >
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Simulador de Marcação</span>
+            <span>Simulador de Estadia &amp; Vaga</span>
           </button>
 
           <a
             href="#servicos"
             className="inline-flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-slate-400 hover:text-white transition-colors whitespace-nowrap"
           >
-            <span>Ver Nossos Serviços</span>
+            <span>Ver Nossos 4 Serviços</span>
           </a>
         </div>
 
@@ -109,6 +109,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal }) => {
             </div>
             <span className="font-semibold text-white ml-1">5.0</span>
             <span className="text-slate-400">(12 avaliações no Google)</span>
+          </div>
+
+          <div className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-600" />
+
+          <div className="flex items-center gap-1.5 text-slate-300">
+            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>Fotos &amp; Vídeos Diários no WhatsApp</span>
           </div>
 
           <div className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-600" />
